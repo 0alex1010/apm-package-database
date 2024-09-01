@@ -1,4 +1,6 @@
 clear
 echo This ron mod is windows but you can use wine so its kinda fine
-wget -O coolmod.zip https://gamebanana.com/dl/1015808
+wget -O ron.zip https://gamebanana.com/dl/1015808
+unzip ron.zip -n
+rm ron.zip
 echo Got cool ron mod but its windows
