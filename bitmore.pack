@@ -1,7 +1,9 @@
 #!/bin/bash
 
+clear
+echo BitterMore (apm systemload) is ready
 # Set the initial prompt
-PS1="system@bittermore~{ "
+PS1="apmsys@bittermore~{ "
 
 # Main loop
 while true; do
