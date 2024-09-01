@@ -5,5 +5,10 @@ echo Got to pack folder!
 mkdir apm
 echo Made apm folder as internal folder!
 cd apm
+mkdir internal
 wget -O internal.aip https://raw.githubusercontent.com/0alex1010/apm-package-database/main/bitmore.pack
+cd internal
+mkdir temp_data
 echo Modifyed apm internals! The setup is now done
+cd ~
+cd pack
