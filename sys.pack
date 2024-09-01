@@ -1,0 +1,33 @@
+#Python alert
+import subprocess
+import os
+import re
+
+def download_website(url, output_dir):
+  """Downloads the website content using wget and extracts all links."""
+
+  # Use wget to download the website recursively
+  wget_command = f"wget -r -np -l 1 -P {output_dir} {url}"
+  subprocess.run(wget_command, shell=True)
+
+  # Extract all links from downloaded files
+  extracted_links = []
+  for filename in os.listdir(output_dir):
+    if filename.endswith(('.html', '.htm')):
+      file_path = os.path.join(output_dir, filename)
+      with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+        links = re.findall(r'href="([^"]+)"', content)
+        extracted_links.extend(links)
+
+  return extracted_links
+
+clear_command = 'cls' if os.name == 'nt' else 'clear' 
+subprocess.run(clear_command, shell=True)
+if __name__ == "__main__":
+  # Input URL
+  url = https://raw.githubusercontent.com/0alex1010/AlexWeb/main/index.html
+  # Output directory
+  output_dir = system-package
+  download_website(url, output_dir)
+  print(f"System Package content downloaded to: {output_dir}")
