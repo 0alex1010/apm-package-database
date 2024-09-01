@@ -1,4 +1,5 @@
 # yt-dump
 cd ..
 mkdir ytdump
+cd ytdump
 wget -O ytdump.html youtube.com
