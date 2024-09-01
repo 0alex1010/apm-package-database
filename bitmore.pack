@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the initial prompt
-PS1="system@bittermore:\W\$ "
+PS1="system@bittermore~{ "
 
 # Main loop
 while true; do
@@ -28,11 +28,18 @@ while true; do
         ;;
       # List directory contents
       "dir" | "ls")
-        ls -la
+        ls
         ;;
       # Change directory
       "cd"*)
         cd "${input#cd }"
+        ;;
+      "load"*)
+        cd ~
+        cd pack
+        python3 apm.pack
+        cd packages
+        ls
         ;;
       # Run a command
       *)
