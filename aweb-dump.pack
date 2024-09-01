@@ -1,0 +1,3 @@
+echo Dumping AlexWeb...
+wget -O alexweb.html https://raw.githubusercontent.com/0alex1010/AlexWeb/main/index.html
+echo You will see if any errors eccor
