@@ -1,0 +1,48 @@
+import subprocess
+import os
+import re
+
+def download_website(url, output_dir):
+  """Downloads the website content using wget and extracts all links."""
+
+  # Create the main "packages" directory if it doesn't exist
+  packages_dir = "packages"
+  if not os.path.exists(packages_dir):
+    os.makedirs(packages_dir)
+
+  # Create the output directory inside "packages"
+  output_path = os.path.join(packages_dir, output_dir)
+  os.makedirs(output_path, exist_ok=True)
+
+  # Change directory to the output directory
+  os.chdir(output_path)
+
+  # Set the filename for the downloaded package
+  name = f"{output_dir}.pack"
+
+  # Download the package using wget
+  wget_command = f"wget -O {name} -l 1 {url}"
+  subprocess.run(wget_command, shell=True)
+
+  # ... (rest of your code for extracting links - you can remove this if not needed) 
+
+  return extracted_links
+
+clear_command = 'cls' if os.name == 'nt' else 'clear' 
+subprocess.run(clear_command, shell=True)
+print("AlexPackage Installer")
+print("___________________________________")
+if __name__ == "__main__":
+  # Base URL for the package database
+  base_url = "https://raw.githubusercontent.com/0alex1010/apm-package-database/main/"
+
+  # Input URL
+  relative_url = input("Enter the Package filename in the database: ")
+
+  # Combine URLs
+  url = base_url + relative_url
+
+  # Output directory
+  output_dir = input("Enter the NameCode of the package: ")
+  download_website(url, output_dir)
+  print(f"Package content downloaded to: {output_dir}")
