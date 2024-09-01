@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# Define colors for the prompt
-RED='\e[0;31m'
-GREEN='\e[0;32m'
-YELLOW='\e[0;33m'
-BLUE='\e[0;34m'
-NC='\e[0m' # No Color
-
 # Set the initial prompt
-PS1="${GREEN}user@host${YELLOW}:${BLUE}\W${NC}\$ "
+PS1="system@bittermore:\W\$ "
 
 # Main loop
 while true; do
