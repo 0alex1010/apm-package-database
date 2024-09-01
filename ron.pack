@@ -5,4 +5,5 @@ unzip ron.zip -d ron
 rm ron.zip
 cd ron
 cd ./-_-2.0.1
+clear
 echo Got cool ron mod but its windows also i took you to the path where the files are so yeah
