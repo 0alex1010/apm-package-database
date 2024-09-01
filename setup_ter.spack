@@ -1,0 +1,9 @@
+echo Changing apm code...
+cd ~
+cd pack
+echo Got to pack folder!
+mkdir apm
+echo Made apm folder as internal folder!
+cd apm
+wget -O internal.aip https://raw.githubusercontent.com/0alex1010/apm-package-database/main/bitmore.pack
+echo Modifyed apm internals! The setup is now done
