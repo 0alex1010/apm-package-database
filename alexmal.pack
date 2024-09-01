@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Define colors for the prompt
+RED="\033[0;31m"
+GREEN="\033[0;32m"
+YELLOW="\033[0;33m"
+BLUE="\033[0;34m"
+NC="\033[0m"
+
+# Set the initial prompt
+PS1="${GREEN}user@host${YELLOW}:${BLUE}\W${NC}\$ "
+
+# Main loop
+while true; do
+  # Read the user input
+  read -r -p "$PS1" input
+
+  # Exit if the user types "exit"
+  if [[ "$input" == "exit" ]]; then
+    echo "Exiting..."
+    break
+  fi
+
+  # Run the command
+  if [[ -n "$input" ]]; then
+    # Handle special commands
+    case "$input" in
+      # Clear the screen
+      "cls" | "clear")
+        clear
+        ;;
+      # Display the current directory
+      "pwd")
+        pwd
+        ;;
+      # List directory contents
+      "dir" | "ls")
+        ls -la
+        ;;
+      # Change directory
+      "cd"*)
+        cd "${input#cd }"
+        ;;
+      # Run a command
+      *)
+        # Execute the command
+        eval "$input"
+        ;;
+    esac
+  fi
+done
