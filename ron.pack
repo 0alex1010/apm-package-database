@@ -3,4 +3,6 @@ echo This ron mod is windows but you can use wine so its kinda fine
 wget -O ron.zip https://gamebanana.com/dl/1015808
 unzip ron.zip -d ron
 rm ron.zip
-echo Got cool ron mod but its windows
+cd ron
+cd ./-_-2.0.1
+echo Got cool ron mod but its windows also i took you to the path where the files are so yeah
